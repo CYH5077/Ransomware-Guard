@@ -1,0 +1,1 @@
+sudo ./guard_start -i -d ./ransomguard.ko -c /dev/hello -s ./guard.conf
