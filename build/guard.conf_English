@@ -1,0 +1,46 @@
+// using google language transfer
+// Input all paths as absolute paths
+// I recommend that you do not touch sentences beginning with #
+/////////////////////////////////////////////////////
+
+// Path to the log file (enter the file name)
+// Log when accessing Decoy file
+// Logging for processes that Ransomware Guard has terminated forcefully
+// Log when accessing the protected directory
+#SETTING_LOG_PATH
+/home/choi/myTools/project/ransomeware_guard/testfiles/test.log
+
+// Use as a field to protect the configuration file (enter the path of the configuration file here)
+// Automatically added to the PRO_DECOY list.
+#SETTING_PATH
+/home/choi/myTools/project/ransomeware_guard/guard/userProcess/guard.conf
+
+// The path where the files with extension set in PRO_EXTENTIONS_ROLLBACK will be backed up
+// [format not yet determined]
+#SETTING_BACKUP_PATH
+/ Home / choi / myTools / project / ransomeware_guard / testfiles / backup
+
+// protected directories
+// Restrict access to files in this directory
+#PRO_DIR
+/ 00000
+
+// Trap files and files created for Rangemore blocking
+// Write it here.
+// recommended extensions - major extensions such as avi, txt, hwp, ppt, tmp, bak,
+// The recommended size of files is at least 1kbyte
+// To increase the probability of blocking Ransomware activity
+// Because Linux files are sorted by file name, when you type ll or ls command
+// Set the file name to be in the first position.
+#PRO_DECOY
+/home/choi/myTools/project/ransomeware_guard/test/hello.hwp
+/home/choi/myTools/project/ransomeware_guard/test/hello.txt
+
+// extensions to use rollback
+// The file is backed up when it is opened by write operation on files of extension
+// extensions of large files are not recommended (avi, mp4 etc.)
+// If you do not want to use the function, remove all the parts below,
+#PRO_EXTENTIONS_ROLLBACK
+.jpg
+.hwp
+.txt
