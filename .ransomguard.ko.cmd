@@ -1,0 +1,1 @@
+cmd_/home/choi/myTools/project/ransomeware_guard/Ransomware-Guard/ransomguard.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/choi/myTools/project/ransomeware_guard/Ransomware-Guard/ransomguard.ko /home/choi/myTools/project/ransomeware_guard/Ransomware-Guard/ransomguard.o /home/choi/myTools/project/ransomeware_guard/Ransomware-Guard/ransomguard.mod.o

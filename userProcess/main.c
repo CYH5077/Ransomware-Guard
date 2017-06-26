@@ -31,13 +31,13 @@ static int start_guard(char * drive_name, char * drive_path, char * conf)
 	return 0;
 }
 
-#define INSMOD		0x0001
-#define D_OPTION 	0x0010
-#define C_OPTION 	0x0100
-#define S_OPTION 	0x1000
-#define FULL_OPTION	0x1111
+#define INSMOD		0x00000001
+#define D_OPTION 	0x00000010
+#define C_OPTION 	0x00000100
+#define S_OPTION 	0x00001000
+#define FULL_OPTION	0x00001111
 
-#define RMMOD		0x0000
+#define RMMOD		0x00000000
 
 int main(int argc, char * argv[])
 {
@@ -83,7 +83,7 @@ int main(int argc, char * argv[])
 		}
 	}
 
-	if(run_mode ^ FULL_OPTION)
+	if(run_mode == FULL_OPTION)
 		return start_guard(dev_path, chr_dev_path, conf_path);
 	
 	
