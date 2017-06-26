@@ -61,9 +61,6 @@ asmlinkage int my_sys_open(const char * file_path, int flags, int mode)
 	strcpy(copy_file_path, file_path);
 	path_maker(copy_file_path, full_path, 256);
 
-	if(strstr(file_path, "00000"))
-		//보호되는 디렉토리인지 체크
-		printk(KERN_INFO "[MODULE]:%s\n", full_path);
 	if(!TTN_search(pro_dir_root, full_path, 1))
 	{
 		//현재 함수를 호출한 프로세스의 파일 풀 경로.
