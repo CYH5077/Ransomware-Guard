@@ -31,13 +31,13 @@ static int start_guard(char * drive_name, char * drive_path, char * conf)
 	return 0;
 }
 
-#define INSMOD		0x00000001
-#define D_OPTION 	0x00000010
-#define C_OPTION 	0x00000100
-#define S_OPTION 	0x00001000
-#define FULL_OPTION	0x00001111
+#define INSMOD		0b00000001
+#define D_OPTION 	0b00000010
+#define C_OPTION 	0b00000100
+#define S_OPTION 	0b00001000
+#define FULL_OPTION	0b00001111
 
-#define RMMOD		0x00000000
+#define RMMOD		0b00000000
 
 int main(int argc, char * argv[])
 {
@@ -59,7 +59,6 @@ int main(int argc, char * argv[])
 	}
 	while((result = getopt(argc, argv, "ird:c:s:")) != -1)
 	{
-		printf("%c: %s\n", result, optarg);
 		switch(result)
 		{
 			case 'i': //insmod
