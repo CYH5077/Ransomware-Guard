@@ -79,6 +79,21 @@ int get_symlink_file(const char *link_file, char *real_file, int buf_size)
 	return 0;
 }
 
+//하나의 경로를 제거 Ex) /test/test  -> /test
+static void back_path(char * buf, char * path)
+{
+	char *temp = buf + strlen(buf) - 1;
+	while(strncmp(path, "..", 2) == 0)
+	{
+		path += 2;
+		if(*path == '/')
+			path++;
+		if(*temp == '/')
+			temp--;
+		for(; *temp != '/' && temp >= buf; temp--){}
+	}
+	*temp = '\0';
+}
 
 // 내생각엔 딱히 실패할 경우가 없을것 같다......
 // 반환형이 쓸모없을지도.
@@ -86,6 +101,7 @@ int path_maker(char * path, char * full_path, int buf_size)
 {
 	struct path work_path;
 	char * chroot_path, chroot_path_temp[256] = {0,};
+	int loop;
 
 	strcpy(full_path, path);
 	if(*path != '/')
@@ -94,16 +110,28 @@ int path_maker(char * path, char * full_path, int buf_size)
 		work_path = current->fs->pwd;
 		chroot_path = d_path(&work_path, chroot_path_temp, 256);
 		strcpy(full_path, chroot_path);
-		if(strncmp(path, "./", 2) == 0) // ./dir 과 같은 형식
+		if(*path == '.') // ./dir 과 같은 형식
 		{
-			path++; //앞의 . 제거
-			full_path = full_path + strlen(chroot_path) + 1;
+			//../../ 와 같은 경로큼 full_path 뒤로 이동
+			back_path(full_path, path);
+			
+			for(loop = 0; loop < strlen(path); loop++)
+			{
+				if(*path == '.' || *path == '/')
+					path++;
+				else
+					break;
+			}
+			loop = strlen(full_path);
+			full_path[loop] = '/';
+			full_path[++loop] = '\0';
+			full_path = full_path + loop;
 		}
 		else // dir/dir 과 같은 형식
 		{
-			full_path[strlen(chroot_path) + 1] = '/';
-			full_path[strlen(chroot_path) + 2] = '\0';
-			full_path = full_path + strlen(chroot_path) + 2;
+			full_path[strlen(chroot_path)] = '/';
+			full_path[strlen(chroot_path) + 1] = '\0';
+			full_path = full_path + strlen(chroot_path) + 1;
 		}
 		strcpy(full_path, path);
 	}
