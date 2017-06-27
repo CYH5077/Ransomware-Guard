@@ -139,8 +139,6 @@ asmlinkage int my_sys_rename(const char * oldpath, const char * newpath)
 	sprintf(proc_path, "/proc/%d/exe", current->pid);
 	get_symlink_file(proc_path, my_real_path, 256);
 	
-	printk(KERN_INFO "[RENAME] : %s\n[old_] : %s\n[old] : %s\n[new] : %s\n", full_path, old_path , oldpath, newpath);	
-	
 	//보호중인 디렉토리 체크.
 	if(!TTN_search(pro_dir_root, full_path, 1))
 	{
