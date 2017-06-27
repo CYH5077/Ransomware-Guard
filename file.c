@@ -86,21 +86,9 @@ int path_maker(char * path, char * full_path, int buf_size)
 {
 	struct path work_path;
 	char * chroot_path, chroot_path_temp[256] = {0,};
-	int loop = 0;
 
 	strcpy(full_path, path);
-	if(*path == '/')
-	{
-		for(loop = strlen(full_path) - 1; loop >= 0; loop--)
-		{	
-			if(full_path[loop] == '/')
-			{
-				full_path[loop] = '\0';
-				break;
-			}
-		}
-	}
-	else 
+	if(*path != '/')
 	{
 		//프로세스의 작업 경로를 얻어온다.
 		work_path = current->fs->pwd;
@@ -149,7 +137,7 @@ static void make_backup_name(char *target, char * backup)
 			break;
 	target_fname = target + loop + 1;
 	get_time(date_buf);
-	sprintf(backup, "%s/%s_%s_guardBackup",  backup_path, date_buf, target_fname);
+	sprintf(backup, "%s/%d_%s_%s_guard",  backup_path, current->pid, date_buf, target_fname);
 }
 //마음에 안듬 나중에 수정 예정
 int extentions_backup(char * real_file)

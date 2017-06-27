@@ -49,7 +49,7 @@ void log_write(char * my_path, char * file_path, char * log_data)
 	get_time(log_buf);
 	log_temp = log_buf + strlen(log_buf);
 
-	sprintf(log_temp, "%s [%s]:::[%s]\n", log_data, my_path, file_path);
+	sprintf(log_temp, "%s[%d][%s]:::[%s]\n", log_data, current->pid, my_path, file_path);
 	vfs_write(log_file, log_buf, strlen(log_buf), &log_file->f_pos);
 	
 	set_fs(old);
