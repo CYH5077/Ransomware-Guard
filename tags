@@ -1,0 +1,136 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BUILD_DIR	userProcess/Makefile	/^BUILD_DIR = ..\/build\/$(NAME)$/;"	m
+CONF_DATA	userProcess/parse.h	/^	CONF_DATA,		\/\/설정 데이터.$/;"	e	enum:DATA_TYPE
+CONF_DESCRIPTION	userProcess/parse.h	/^	CONF_DESCRIPTION	\/\/주석$/;"	e	enum:DATA_TYPE
+CONF_ERROR	userProcess/parse.h	/^	CONF_ERROR = 0, 	\/\/설정 파일 에러$/;"	e	enum:DATA_TYPE
+CONF_HEADER	userProcess/parse.h	/^	CONF_HEADER,		\/\/설정 헤더$/;"	e	enum:DATA_TYPE
+CR0_PROTECTION	hook_func.h	9;"	d
+C_OPTION	userProcess/main.c	36;"	d	file:
+DATA_TYPE	userProcess/parse.h	/^typedef enum DATA_TYPE {$/;"	g
+DEVICE_NUM	file.h	12;"	d
+DEVICE_NUM	userProcess/driver.h	10;"	d
+D_OPTION	userProcess/main.c	35;"	d	file:
+FILES	userProcess/Makefile	/^FILES = main.c parse.c driver.c$/;"	m
+FULL_OPTION	userProcess/main.c	38;"	d	file:
+GET_ARG	userProcess/parse.h	62;"	d
+HEADER_ERROR	userProcess/parse.h	/^	HEADER_ERROR = 0,	\/\/헤더 데이터 오류.$/;"	e	enum:SETTING_VALUE
+INSMOD	userProcess/main.c	34;"	d	file:
+KERNDIR	Makefile	/^KERNDIR=\/lib\/modules\/$(shell uname -r)\/build\/$/;"	m
+NAME	userProcess/Makefile	/^NAME = guard_start$/;"	m
+OBJECTS	userProcess/Makefile	/^OBJECTS = $(subst .c,.o,$(FILES))$/;"	m
+PRO_ADD_ERROR	parse.h	/^	PRO_ADD_ERROR,$/;"	e	enum:SET_HEADER
+PRO_DECOY	parse.h	/^	PRO_DECOY,$/;"	e	enum:SET_HEADER
+PRO_DECOY	userProcess/parse.h	/^	PRO_DECOY,		\/\/ #PRO_DECOY$/;"	e	enum:SETTING_VALUE
+PRO_DIR	parse.h	/^	PRO_DIR,$/;"	e	enum:SET_HEADER
+PRO_DIR	userProcess/parse.h	/^	PRO_DIR,		\/\/ #PRO_DIR$/;"	e	enum:SETTING_VALUE
+PRO_ERROR	parse.h	/^	PRO_ERROR = 0,$/;"	e	enum:SET_HEADER
+PRO_EXTENTIONS_ROLLBACK	parse.h	/^	PRO_EXTENTIONS_ROLLBACK$/;"	e	enum:SET_HEADER
+PRO_EXTENTIONS_ROLLBACK	userProcess/parse.h	/^	PRO_EXTENTIONS_ROLLBACK	\/\/ #PRO_EXTENTIONS_ROLLBACK$/;"	e	enum:SETTING_VALUE
+RMMOD	userProcess/main.c	40;"	d	file:
+SETTING_BACKUP_PATH	userProcess/parse.h	/^	SETTING_BACKUP_PATH,	\/\/ #SETTING_BACKUP_PATH$/;"	e	enum:SETTING_VALUE
+SETTING_LOG_PATH	userProcess/parse.h	/^	SETTING_LOG_PATH,	\/\/ #SETTING_LOG_PATH$/;"	e	enum:SETTING_VALUE
+SETTING_PATH	userProcess/parse.h	/^	SETTING_PATH,		\/\/ #SETTING_PATH $/;"	e	enum:SETTING_VALUE
+SETTING_VALUE	userProcess/parse.h	/^typedef enum SETTING_VALUE {$/;"	g
+SET_HEADER	parse.h	/^typedef enum SET_HEADER{$/;"	g
+S_OPTION	userProcess/main.c	37;"	d	file:
+Setting	userProcess/parse.h	/^typedef struct Setting{$/;"	s
+TTN_add	TTN.c	/^int TTN_add(TTNode ** root, char * data)$/;"	f
+TTN_deleteAll	TTN.c	/^void TTN_deleteAll(TTNode ** root)$/;"	f
+TTN_printAll	TTN.c	/^void TTN_printAll(TTNode * root)$/;"	f
+TTN_search	TTN.c	/^int TTN_search(TTNode * root, char * search_str, int dir_flag)$/;"	f
+TTNode	TTN.h	/^} TTNode;$/;"	t	typeref:struct:TripleTreeNode
+TripleTreeNode	TTN.h	/^typedef struct TripleTreeNode{$/;"	s
+USER_COMPILE	Makefile	/^USER_COMPILE = .\/userProcess\/$/;"	m
+USER_DRIVER	userProcess/driver.h	/^typedef struct USER_DRIVER{$/;"	s
+__GUARD_OPEN_HOOK_HEADER__	hook_func.h	2;"	d
+__RANSOMGAURD_USER_PARSE_HEADER__	userProcess/parse.h	2;"	d
+__RANSOMGUARD_LOG_HEADER__	log.h	2;"	d
+__RANSOMGUARD_USER_DRIVER_HEADER__	userProcess/driver.h	2;"	d
+__RANSOMWARE_GUARD_FILE__	file.h	2;"	d
+__RANSOM_GUARD_PARSE_HEADER__	parse.h	2;"	d
+__RANSOM_GUARD_TTN_HEADER__	TTN.h	2;"	d
+add_TTN_data	parse.c	/^static int add_TTN_data(TTNode ** root, char * data)$/;"	f	file:
+back_path	file.c	/^static void back_path(char * buf, char * path)$/;"	f	file:
+backup_path	log.c	/^char * backup_path = NULL;$/;"	v
+buf	TTN.c	/^char buf[100];$/;"	v
+buf_index	TTN.c	/^int buf_index = 0;$/;"	v
+check_extentions	file.c	/^int check_extentions(char * path)$/;"	f
+chr_driver	userProcess/driver.h	/^	char chr_driver[256];	\/\/문자 디바이스 경로.$/;"	m	struct:USER_DRIVER
+chr_fd	userProcess/driver.h	/^	int chr_fd;		\/\/문자 디바이스 파일 디스크립터.$/;"	m	struct:USER_DRIVER
+conf_fd	userProcess/parse.h	/^	FILE * conf_fd;		\/\/설정파일 스트림$/;"	m	struct:Setting
+config_data	userProcess/parse.h	/^} config_data;$/;"	t	typeref:struct:Setting
+data	TTN.h	/^	char data;$/;"	m	struct:TripleTreeNode
+data	userProcess/parse.h	/^	char data[256];		\/\/한줄에 공백으로 연속 데이터가 있으면 저장용 임시 버퍼$/;"	m	struct:Setting
+data_type	userProcess/parse.h	/^} data_type;$/;"	t	typeref:enum:DATA_TYPE
+down	TTN.h	/^	struct TripleTreeNode *left, *down, *right;$/;"	m	struct:TripleTreeNode	typeref:struct:TripleTreeNode::
+driver_close	userProcess/driver.c	/^void driver_close(guard_driver * driver)$/;"	f
+driver_ready	userProcess/driver.c	/^int driver_ready(guard_driver * driver, char * drive_name, char * drive_path, char * conf_path)$/;"	f
+driver_start	userProcess/driver.c	/^static int driver_start(char * drive_name, char * conf_path)$/;"	f	file:
+driver_write	userProcess/driver.c	/^int driver_write(guard_driver * driver)$/;"	f
+endFlag	TTN.h	/^	short endFlag;$/;"	m	struct:TripleTreeNode
+extentions_backup	file.c	/^int extentions_backup(char * real_file)$/;"	f
+find_header_data	userProcess/parse.c	/^static set_val find_header_data(char * data)$/;"	f	file:
+find_sys_table	hook_func.c	/^int find_sys_table(void)$/;"	f
+get_header_type	parse.c	/^static set_val get_header_type(char * header_data)$/;"	f	file:
+get_symlink_file	file.c	/^int get_symlink_file(const char *link_file, char *real_file, int buf_size)$/;"	f
+get_time	log.c	/^void get_time(char * buf)$/;"	f
+guard_close	file.c	/^int guard_close(struct inode * inode, struct file * file_st)$/;"	f
+guard_driver	userProcess/driver.h	/^} guard_driver;$/;"	t	typeref:struct:USER_DRIVER
+guard_event	file.c	/^struct file_operations guard_event;$/;"	v	typeref:struct:file_operations
+guard_open	file.c	/^int guard_open(struct inode * inode, struct file * file_st)$/;"	f
+guard_read	file.c	/^ssize_t guard_read(struct file *file_st, char *buf, size_t count, loff_t *f_pos)$/;"	f
+guard_write	file.c	/^ssize_t guard_write(struct file * file_st, const char * buf, size_t count, loff_t *f_pos)$/;"	f
+hdr_type	userProcess/parse.h	/^	set_val hdr_type;	\/\/설정값 타입. (헤더 타입)$/;"	m	struct:Setting
+hook_end	hook_func.c	/^void hook_end(void)$/;"	f
+hook_start	hook_func.c	/^void hook_start(void)$/;"	f
+insmod	userProcess/driver.c	/^static int insmod(char * drive_name, char * arg)$/;"	f	file:
+is_log_open	log.c	/^short is_log_open = 0;$/;"	v
+left	TTN.h	/^	struct TripleTreeNode *left, *down, *right;$/;"	m	struct:TripleTreeNode	typeref:struct:TripleTreeNode::TripleTreeNode
+line	userProcess/parse.h	/^	int line;		\/\/설정파일 에러시 에러 발생라인 출력용$/;"	m	struct:Setting
+log_close	log.c	/^void log_close(void)$/;"	f
+log_file	log.c	/^struct file * log_file = NULL;$/;"	v	typeref:struct:file
+log_open	log.c	/^int log_open(void)$/;"	f
+log_path	log.c	/^char * log_path = NULL;$/;"	v
+log_write	log.c	/^void log_write(char * my_path, char * file_path, char * log_data)$/;"	f
+main	userProcess/main.c	/^int main(int argc, char * argv[])$/;"	f
+make_arg	userProcess/driver.c	/^static int make_arg(config_data * conf, char * arg_buf)$/;"	f	file:
+make_backup_name	file.c	/^static void make_backup_name(char *target, char * backup)$/;"	f	file:
+make_data	userProcess/driver.c	/^static int make_data(char * buf, int buf_size, guard_driver * driver)$/;"	f	file:
+my_linecut	parse.c	/^static char * my_linecut(char * cut_str, const char cut_token, char ** next_line)$/;"	f	file:
+my_sys_open	hook_func.c	/^asmlinkage int my_sys_open(const char * file_path, int flags, int mode)$/;"	f
+my_sys_rename	hook_func.c	/^asmlinkage int my_sys_rename(const char * oldpath, const char * newpath)$/;"	f
+my_sys_write	hook_func.c	/^asmlinkage ssize_t my_sys_write(int fd, const void * buf, size_t count)$/;"	f
+path_maker	file.c	/^int path_maker(char * path, char * full_path, int buf_size)$/;"	f
+pro_decoy_root	TTN.c	/^TTNode * pro_decoy_root = NULL;$/;"	v
+pro_dir_root	TTN.c	/^TTNode * pro_dir_root = NULL;$/;"	v
+pro_extentions_root	TTN.c	/^TTNode * pro_extentions_root = NULL;$/;"	v
+prs_add_data	parse.c	/^int prs_add_data(set_val header_type, char * add_data)$/;"	f
+prs_check_line	userProcess/parse.c	/^data_type prs_check_line(config_data * conf, char * line)$/;"	f
+prs_close	userProcess/parse.c	/^void prs_close(config_data * conf)$/;"	f
+prs_data	parse.c	/^set_val prs_data(char * buf)$/;"	f
+prs_get_data	userProcess/parse.c	/^int prs_get_data(config_data * conf, int get_arg)$/;"	f
+prs_open	userProcess/parse.c	/^int prs_open(config_data * conf, char * file)$/;"	f
+real_sys_open	hook_func.c	/^asmlinkage int(*real_sys_open)(const char *, int, int) = NULL;$/;"	v
+real_sys_rename	hook_func.c	/^asmlinkage int(*real_sys_rename)(const char *, const char *) = NULL;$/;"	v
+real_sys_write	hook_func.c	/^asmlinkage ssize_t(*real_sys_write)(int, const void *, size_t) = NULL;$/;"	v
+reg_guard_chr	file.c	/^int reg_guard_chr(int dev_num, char * name)$/;"	f
+right	TTN.h	/^	struct TripleTreeNode *left, *down, *right;$/;"	m	struct:TripleTreeNode	typeref:struct:TripleTreeNode::
+send_killSig	file.c	/^int send_killSig(struct task_struct * task)$/;"	f
+set_backup_flag	userProcess/parse.h	/^	int set_log_flag, set_backup_flag; \/\/insmod$/;"	m	struct:Setting
+set_log_flag	userProcess/parse.h	/^	int set_log_flag, set_backup_flag; \/\/insmod$/;"	m	struct:Setting
+set_path	userProcess/parse.h	/^	char * set_path;	\/\/설정파일 경로.$/;"	m	struct:Setting
+set_val	parse.h	/^} set_val;$/;"	t	typeref:enum:SET_HEADER
+set_val	userProcess/parse.h	/^} set_val;$/;"	t	typeref:enum:SETTING_VALUE
+setting	userProcess/driver.h	/^	config_data setting;	\/\/설정 관련 parse.h 정의$/;"	m	struct:USER_DRIVER
+start_guard	userProcess/main.c	/^static int start_guard(char * drive_name, char * drive_path, char * conf)$/;"	f	file:
+sys_table	hook_func.c	/^void ** sys_table = NULL;$/;"	v
+syscall_init	main.c	/^module_init(syscall_init);$/;"	v
+syscall_init	main.c	/^static int __init syscall_init(void)$/;"	f	file:
+syscall_release	main.c	/^module_exit(syscall_release);$/;"	v
+syscall_release	main.c	/^static void __exit syscall_release(void)$/;"	f	file:
+unreg_guard_chr	file.c	/^void unreg_guard_chr(int dev_num, char * name)$/;"	f
