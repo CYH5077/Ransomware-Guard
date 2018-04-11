@@ -103,7 +103,6 @@ make_backup_name	file.c	/^static void make_backup_name(char *target, char * back
 make_data	userProcess/driver.c	/^static int make_data(char * buf, int buf_size, guard_driver * driver)$/;"	f	file:
 my_linecut	parse.c	/^static char * my_linecut(char * cut_str, const char cut_token, char ** next_line)$/;"	f	file:
 my_sys_open	hook_func.c	/^asmlinkage int my_sys_open(const char * file_path, int flags, int mode)$/;"	f
-my_sys_rename	hook_func.c	/^asmlinkage int my_sys_rename(const char * oldpath, const char * newpath)$/;"	f
 my_sys_write	hook_func.c	/^asmlinkage ssize_t my_sys_write(int fd, const void * buf, size_t count)$/;"	f
 path_maker	file.c	/^int path_maker(char * path, char * full_path, int buf_size)$/;"	f
 pro_decoy_root	TTN.c	/^TTNode * pro_decoy_root = NULL;$/;"	v

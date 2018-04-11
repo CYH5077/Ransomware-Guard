@@ -111,12 +111,12 @@ asmlinkage ssize_t my_sys_write(int fd, const void * buf, size_t count)
 		//우선 사용자 명령은 가능하게
 		//나중에 예외 프로그램 추가 예정.
 		//사용자 명령으로 수정은 가능하도록 (vi 같은)
-		if(strncmp(my_real_path, "/usr/bin", 7) != 0)
+		//if(strncmp(my_real_path, "/usr/bin", 7) != 0)
 		{
 			log_write(my_real_path, target_real_path, "WRITE - PRO_DECOY");
 			send_killSig(current);
 			return -1;
-		}
+		//}
 	}
 	//확장자 체크
 	if(!check_extentions(target_real_path)){
